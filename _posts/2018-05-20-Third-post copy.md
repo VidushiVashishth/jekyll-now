@@ -40,5 +40,7 @@ The next couple of blogs would center around implementing the aforementioned use
 ## References
 
 http://diamon.org/babeltrace/
+
 http://diamon.org/ctf/#ctf-in-a-nutshell
+
 https://docs.rtems.org/branches/master/user/index.html
