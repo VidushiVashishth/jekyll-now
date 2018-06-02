@@ -19,7 +19,7 @@ Currently trace buffering can be accomplished using two schemes:
 
 My aim is to develop Rtems trace using Common Trace Format (CTF). CTF brings a range of features which rtems can benefit from. Before I explain how this will be acomplished it will be beneficial if the reader understands Rtems trace using trace buffering since several steps of the workflow will be common in both schemes. However if you are an impatient reader feel free to skip the next bit!
 
-##Rtems trace using trace buffering
+## Rtems trace using trace buffering
 
 This scheme of tracing goes through the flow of events described in the follwing image. 
 
@@ -34,7 +34,7 @@ Step 4: RTEMS shell provides the "rtrace" command to display and save trace buff
 ![_config.yml]({{ https://vidushivashishth.github.io/ }}/images/img2.png)
 My next blog details an example of tracing the fileio sample testcase with trace buffering. Check it out!
 
-##Rtems trace using CTF
+## Rtems trace using CTF
 
 The procedure for CTF conversion has been mentioned in the previous blogpost. The flowchart is added here again for easier reference. The steps 1, 2 and 3 are similar to the trace buffeering scheme with minute differences
 
