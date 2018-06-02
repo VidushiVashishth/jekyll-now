@@ -3,18 +3,24 @@ layout: post
 title: Common Trace Format(CTF) trace generation in RTEMS
 ---
 Rtems tracing framework comprises of the following main components:
-1) Rtems trace linker (https://github.com/VidushiVashishth/rtems-tools/tree/master/linkers)
+
+1) Rtems trace linker
+
 2) Capture Engine
 
 The RTEMS Trace Linker is a post link tool that performs a re-link of user's application to produce a trace executable. A trace executable has been instrumented by the RTEMS Trace Linker with additional code that implements software tracing. A key requirement of the trace process in RTEMS is to take existing code in a compiled format (ELF) and instrument it without rebuilding that code from source and without annotating that source with trace code. The trace linker is controlled using configuration files in a flexible manner and can be configured to follow various tracing schemes. There are three types of configuration files:
 
 1) <em>User configuration</em>- This is the configuration input into the trace linker for defining the values of trace generator, traces, triggers and enables for the user application to be traced.
+
 2) <em>Generator configuration</em>- This is used to encapsulate a specific method of tracing. Rtems currently provides generators for trace buffering, printk and printf. 
+
 3) <em>Tracer configuration</em>- This is a library of common base trace configurations used by an application.
 
 
 Currently trace buffering can be accomplished using two schemes:
+
 1) Rtems trace using trace buffering
+
 2) Rtems trace using printk 
 
 My aim is to develop Rtems trace using Common Trace Format (CTF). CTF brings a range of features which rtems can benefit from. Before I explain how this will be acomplished it will be beneficial if the reader understands Rtems trace using trace buffering since several steps of the workflow will be common in both schemes. However if you are an impatient reader feel free to skip the next bit!
