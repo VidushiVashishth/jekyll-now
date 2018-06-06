@@ -41,7 +41,7 @@ rtems-tld -C fileio-trace.ini -W fileio-wrapper -- -B/home/vidushi/development/r
 
 {% endhighlight %}
 
-The following command is used to run the application. Hit enter key quickly and type "s" and "root" and "pwd" to run the rtems shell. Use the rtrace staus, rtrace trace and rtrace save commands to know the status of the tracing, display the contents of the trace buffer and save the buffer to disk. 
+The following command is used to run the application. Hit enter key quickly and type "s" and "root" and "pwd" to run the rtems shell. Use the rtrace staus, rtrace trace and rtrace save commands to know the status of the tracing, display the contents of the trace buffer and save the buffer to disk in the form of binary files.
  
 {% highlight c %}
 
