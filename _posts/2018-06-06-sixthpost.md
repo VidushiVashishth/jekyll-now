@@ -20,11 +20,13 @@ Babeltrace [1] is a trace conversion tool which primarily converts CTF inputs in
 
 barectf [2] is a command-line generator of ANSI C tracers which output Common Trace Format packets natively. It takes a yaml configuration file as input and generates CTF metadata as well as c code of tracing functions. The application then uses these tracing functions in its source and generates binary streams of CTF. To use barectf with RTEMS the following approach will need to be followed:
 
-1) Writing a yaml configuration deciding the structure of the CTF streams to be generated. This will be input to barectf to generate CTF metadata and tracing code. 
+1) Writing a YAML configuration deciding the structure of the CTF streams to be generated. This will be input to barectf to generate CTF metadata and tracing code. 
+
 2) Creating a Trace Linker Generator which guides the Trace Linker to use the barectf generated functions in the wrapper of the application to be traced. The final wrapper code will then be compiled and the application executable will be relinked.
+
 3) On execution of the application CTF traces will be generated. These could be converted into human readable form using babeltrace and CTF metadata generated in first step.
 
-It might seem to the reader that since barectf requires change in source code of application it conflicts with rtems trace requirements (of not touching application source). However this approach makes changes to the wrapper code instead of the source code and hence keeps the rtems trace requirements in tact. The problems with this approach lie in deciding a suitable yaml configuration for the process. This is under discussion. 
+It might seem to the reader that since barectf requires change in source code of application it conflicts with rtems trace requirements (of not touching application source). However this approach makes changes to the wrapper code instead of the source code and hence keeps the rtems trace requirements in tact. The problems with this approach lie in deciding a suitable YAML configuration for the process. This is under discussion. 
 
 # References
 
