@@ -105,12 +105,12 @@ lttng-utils:
 
 {% endhighlight %}
 
-I saved the output of the rtems trace into a text file and ran the babeltrace conversion graph on it. The output of this command generated a ctf metadata file and a ctf stream. The command used considers babeltrace input to be a dmesg text input and declares ctf as the required output. It creates the relvant components and gives the values of the path for both the input and output traces.
+I saved the output of the rtems trace into a text file and ran the babeltrace conversion graph on it. The output of this command generated a ctf metadata file and a ctf stream. The command used considers babeltrace input to be a dmesg text input and declares ctf as the required output. It creates the relevant components and gives the values of the path for both the input and output traces.
 
 
 {% highlight c %}
 
-$ sudo babeltrace run --component=A:source.text.dmesg --params='no-extract-timestamp=no' --key=path --value ~/Desktop/babeltrace_exp2/Trace --component=B:sink.ctf.fs --key=path --value ./Desktop --connect=A:B
+$ babeltrace run --component=A:source.text.dmesg --params='no-extract-timestamp=no' --key=path --value ~/Desktop/babeltrace_exp2/Trace --component=B:sink.ctf.fs --key=path --value ./Desktop --connect=A:B
 
 {% endhighlight %}
 
@@ -118,13 +118,9 @@ The output of this command creates a ctf stream in a file by the name of the inp
 
 {% highlight c %}
 
-vidushi@vidushi-HP-15-Notebook-PC:~/Desktop$ cd Trace
-vidushi@vidushi-HP-15-Notebook-PC:~/Desktop/Trace$ sudo ls -alZ
-total 16
-drwxr-x--x 2 root    root    ? 4096 Jun 24 12:01 .
-drwxr-xr-x 7 vidushi vidushi ? 4096 Jun 24 12:01 ..
--rw-r----- 1 root    root    ?  688 Jun 24 12:01 metadata
--rw-r----- 1 root    root    ?   71 Jun 24 12:01 stream-0-0
+vidushi@vidushi-HP-15-Notebook-PC:~/Desktop$ cd Trace-1
+vidushi@vidushi-HP-15-Notebook-PC:~/Desktop/Trace$ ls
+metadata  stream-0-0
 vidushi@vidushi-HP-15-Notebook-PC:~/Desktop/Trace$ 
 
 {% endhighlight %}
